@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var webView: WKWebView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let myURL = URL(string:"http://127.0.0.1:3000")
+        let myRequest = URLRequest(url: myURL!)
+        webView?.load(myRequest)
     }
 
-
+    @IBAction func backButtonClick(_ sender: Any) {
+        webView?.goBack()
+    }
+    
+    @IBAction func refreshButtonClcik(_ sender: Any) {
+        webView?.reload()
+    }
+    
 }
 
