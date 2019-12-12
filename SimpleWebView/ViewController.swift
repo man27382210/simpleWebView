@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string:"http://127.0.0.1:3000")
+        let myURL = URL(string:"https://nuxh8.csb.app/")
         let myRequest = URLRequest(url: myURL!)
         webView?.load(myRequest)
     }
